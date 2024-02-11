@@ -4,6 +4,4 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
-recipients.db
-
-gmailConfig.json
+../gmailConfig.json
