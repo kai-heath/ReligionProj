@@ -1,0 +1,1 @@
+{"kind":"FETCH","data":{"headers":{"connection":"keep-alive","content-length":"4","content-type":"text/html; charset=utf-8","date":"Sun, 11 Feb 2024 02:04:44 GMT","etag":"W/\"4-MByqNJgqvz3ZpGITR5RzlLTEsBo\"","keep-alive":"timeout=5","x-powered-by":"Express"},"body":"eWVldA==","status":200,"url":"http://localhost:3001/api/sendMail"},"revalidate":31536000,"tags":[]}

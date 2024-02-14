@@ -4,4 +4,6 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
-../gmailConfig.json
+../node_modules/
+../package-lock.json
+../package.json
