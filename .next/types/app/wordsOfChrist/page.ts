@@ -1,4 +1,4 @@
-// File: /home/kai/Documents/github projects/ReligionProj/app/wordsOfChrist/page.js
+// File: C:\Users\KaiCH\OneDrive\Documents\GitHub\ReligionProj\app\wordsOfChrist\page.js
 import * as entry from '../../../../app/wordsOfChrist/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
