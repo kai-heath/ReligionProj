@@ -10,7 +10,7 @@ const navbar = () => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
   return (
-    <Navbar bg="primary" data-bs-theme="primary" expand="lg">
+    <Navbar bg="secondary" data-bs-theme="secondary" expand="lg">
       <Container>
           <Navbar.Brand href="#home">KaiHeath.com</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

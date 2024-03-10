@@ -30,6 +30,7 @@ apiRouter.post('/addEmail', async (req, res) => {
     let email = req.body.email
     await db.insertData(email)
         .then((result) => {
+            mailer.sendEmail(email, "Welcome!", "Thank you for signing up to Words of Christ!")
             outString = `successfully added ${email}!`
         })
         .catch((message) => {

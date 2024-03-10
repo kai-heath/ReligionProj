@@ -11,13 +11,13 @@ const transporter = nodemailer.createTransport({
 });
 
 const mailOptions = {
-  from: 'youremail@gmail.com',
-  subject: 'Peyton is a turd',
-  text: 'Turd'
+  from: 'wordsofchristproject@gmail.com',
 };
 
-function sendEmail() {
-    mailOptions.bcc = "8059561818@vtext.com"
+function sendEmail(recipient, subject, text) {
+    mailOptions.to = recipient
+    mailOptions.subject = subject
+    mailOptions.text = text
     transporter.sendMail(mailOptions)
         .then((info) => {
             console.log(`Message sent: ${info.response}`);

@@ -35,11 +35,8 @@ async function emailAddRequest(emailAddress) {
         <label>
           <Form.Control value = {emailInput} onInput = {(e) => setInput(e.target.value)} type = 'email' placeholder = 'Enter your email here!'/>
         </label>
-        <button onClick={()=> addEmail()}>press to add your Email!</button>
+        <button className = "btn btn-primary"onClick={()=> addEmail()}>press to add your Email!</button>
         <p id = 'emailResult'>{returnVal}</p>
-    </div>
-    <div>
-        <button type = 'button' onClick = {() => console.log(emailInput)}>press to send the emails!</button>
     </div>
     </div>
   )
