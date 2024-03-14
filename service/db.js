@@ -19,18 +19,19 @@ function createDbConnection() {
 
 function createTable(db) {
     db.exec(`
-  CREATE TABLE Emails
+  CREATE TABLE Accounts
   (
-    Email   VARCHAR(50) NOT NULL PRIMARY KEY
+    Phone   VARCHAR(50) NOT NULL UNIQUE,
+    AuthToken VARCHAR(50) NOT NULL PRIMARY KEY
   );
 `);
 }
 
-function insertData(email) {
+function insertData(email, authToken) {
     return new Promise((resolve, reject) => {
         return database.run(
-            `INSERT INTO Emails (Email) VALUES (?)`,
-            [email],
+            `INSERT INTO Accounts (Phone, AuthToken) VALUES (?, ?)`,
+            [email, authToken],
             function (error) {
                 if (error) {
                     return reject(error.message);
@@ -41,19 +42,21 @@ function insertData(email) {
     })
 }
 
-function displayData() {
-    database.each(`SELECT * FROM Emails`, (error, row) => {
-        if (error) {
-            console.log(error.message);
-        }
-        console.log(row);
-    });
+async function getPhoneNumbers() {
+    return new Promise((resolve, reject) => {
+        return database.all(`SELECT * FROM Accounts`, (error, rows) => {
+            if (error) {
+                return reject(error.message);
+            }
+            return resolve(rows);
+        });
+    })
 }
 
  function isInDb(email) {
     return new Promise ((resolve, reject) => {
         return database.get(
-            'SELECT Email FROM Emails Where Email = (?)', [email], (error, output) => {
+            'SELECT Phone FROM Accounts Where Phone = (?)', [email], (error, output) => {
                 if (error) {
                     return reject(error.message)
                 }
@@ -65,10 +68,23 @@ function displayData() {
     })
 }
 
-function deleteData(email) {
+function getPhone(authToken) {
+    return new Promise((resolve, reject) => {
+        return database.get(
+            'SELECT Phone FROM Accounts WHERE AuthToken = (?)', [authToken], (error, output) => {
+                if (error) {
+                    return reject(error.message)
+                }
+                return resolve(output)
+            }
+        )
+    })
+}
+
+function deleteData(authToken) {
     return new Promise((resolve, reject) => {
         return database.run(
-            'DELETE FROM Emails WHERE Email = (?)', [email], (error, output) => {
+            'DELETE FROM Accounts WHERE AuthToken = (?)', [authToken], (error, output) => {
                 if (error) {
                     return reject(error.message)
                 }
@@ -81,7 +97,8 @@ function deleteData(email) {
 
 module.exports = {
     insertData,
-    displayData,
+    getPhoneNumbers,
     isInDb,
-    deleteData
+    deleteData,
+    getPhone,
 }

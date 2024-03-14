@@ -1,1 +1,4 @@
-{}
+{
+  "/not-found": "app/not-found.js",
+  "/wordsOfChrist/page": "app/wordsOfChrist/page.js"
+}

@@ -14,17 +14,23 @@ const mailOptions = {
   from: 'wordsofchristproject@gmail.com',
 };
 
-function sendEmail(recipient, subject, text) {
+async function sendMassTexts(recipients, text) {
+  recipients.forEach(async (recipient) => {
+    await sendEmail(recipient, text);
+  });
+}
+
+async function sendEmail(recipient, text) {
     mailOptions.to = recipient
-    mailOptions.subject = subject
     mailOptions.text = text
-    transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions)
         .then((info) => {
-            console.log(`Message sent: ${info.response}`);
+          console.log("sent")
+            return (`Message sent: ${info.response}`);
         }, (err) => {
-            console.log(`Error occurred: ${err}`);
+          console.log(err)
+            throw (`Error occurred: ${err}`);
         })
-    ;
 }
 
 module.exports = {
