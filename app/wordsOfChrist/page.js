@@ -38,24 +38,23 @@ export default function Page() {
   return (
     <div className="center">
       <h1>Welcome to Words of Christ!</h1>
-      <div>
+      <div className="form-group">
         <form
           onSubmit={(e) => {
             e.preventDefault();
             addPhoneNumber();
           }}
         >
-          <label>
-            <input  value={emailInput} onInput={(e) => setInput(e.target.value)} type="tel" pattern="[0-9]{10}" placeholder="Enter your phone number here!" />
-          </label>
-          <select onChange={(e) => setCarrier(e.target.value)} className="form-select">
+          <label>Phone Number</label>
+            <input className="form-control"  value={emailInput} onInput={(e) => setInput(e.target.value)} type="tel" pattern="[0-9]{10}"/>
+          <select className="form-select" onChange={(e) => setCarrier(e.target.value)}>
             <option value = "">Select Your Carrier</option>
             <option value="@Vtext.com">Verizon</option>
             <option value="@txt.att.net">AT&T</option>
             <option value="@tmomail.net">T-Mobile</option>
           </select>
           <button className="btn btn-primary" type="submit">
-            press to add your phone number!
+            Sign up
           </button>
         </form>
         <p id="emailResult">{returnVal}</p>

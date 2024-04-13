@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-bs-theme="primary">
       <head>
       <link rel="icon" href="favicon.ico" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </head>
       <body>
       <title>KaiHeath.com</title>

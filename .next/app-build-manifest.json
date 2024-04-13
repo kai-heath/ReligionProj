@@ -1,21 +1,29 @@
 {
   "pages": {
+    "/_not-found": [
+      "static/chunks/webpack-5cb14c594e9263f5.js",
+      "static/chunks/fd9d1056-de7cf3381934ebde.js",
+      "static/chunks/69-022eee59f60b4213.js",
+      "static/chunks/main-app-88c6b4092f798c57.js",
+      "static/chunks/app/_not-found-ebb528d6b565867d.js"
+    ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-5cb14c594e9263f5.js",
+      "static/chunks/fd9d1056-de7cf3381934ebde.js",
+      "static/chunks/69-022eee59f60b4213.js",
+      "static/chunks/main-app-88c6b4092f798c57.js",
+      "static/css/d3df112486f97f47.css",
+      "static/chunks/933-0d4c0d1a7a835bc9.js",
+      "static/css/65afedcfd4eeaa54.css",
+      "static/chunks/app/layout-5be6c1d3e100b48b.js"
     ],
     "/wordsOfChrist/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/wordsOfChrist/page.css",
-      "static/chunks/app/wordsOfChrist/page.js"
-    ],
-    "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/webpack-5cb14c594e9263f5.js",
+      "static/chunks/fd9d1056-de7cf3381934ebde.js",
+      "static/chunks/69-022eee59f60b4213.js",
+      "static/chunks/main-app-88c6b4092f798c57.js",
+      "static/css/d1da2d0db0db8899.css",
+      "static/chunks/app/wordsOfChrist/page-6c661b292b458ce6.js"
     ]
   }
 }
